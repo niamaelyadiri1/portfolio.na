@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niama EL yadiri </title>
+    <!-- Importation de la police Google Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. VARIABLES CSS & PALETTE MODERNE ÉPURÉE
+           ========================================================================== */
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: rgba(79, 70, 229, 0.12);
+            --whatsapp: #25d366;
+            --whatsapp-hover: #1ebd5a;
+            --whatsapp-glow: rgba(37, 211, 102, 0.35);
+            --linkedin: #0a66c2;
+            --facebook: #1877f2;
+            --dark: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+            --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            --shadow-hover: 0 20px 25px -5px rgba(79, 70, 229, 0.15), 0 8px 10px -6px rgba(79, 70, 229, 0.1);
+
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE GLOBALE
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin-inline: auto;
+            padding-inline: 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================================
+           3. BOUTONS & STYLES DES ACTIONS
+           ========================================================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 0.85rem 1.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(79, 70, 229, 0.45);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--dark);
+            border-color: var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: #ffffff;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Bouton Spécifique WhatsApp */
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            box-shadow: 0 6px 18px 0 var(--whatsapp-glow);
+            font-size: 1.05rem;
+            padding: 1rem 2rem;
+            font-weight: 700;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px 0 rgba(37, 211, 102, 0.5);
+            color: #ffffff;
+        }
+
+        .btn-whatsapp svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+           4. NAVIGATION FLUIDE (STICKY)
+           ========================================================================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--whatsapp);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           5. SECTION HÉRO & EMPLACEMENT PHOTO
+           ========================================================================== */
+        .hero {
+            padding: 6rem 0 4rem;
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 3.5rem;
+        }
+
+        .hero-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #059669;
+            background: #ecfdf5;
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--radius-full);
+            margin-bottom: 1.5rem;
+            border: 1px solid #a7f3d0;
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Emplacement photo personnalisé */
+        .hero-avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .avatar-glow {
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(37, 211, 102, 0.25));
+            border-radius: 50%;
+            filter: blur(35px);
+            z-index: 1;
+            animation: pulse-glow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .avatar-circle {
+            position: relative;
+            z-index: 2;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, var(--primary), var(--whatsapp));
+            box-shadow: 0 16px 32px -8px rgba(79, 70, 229, 0.35);
+        }
+
+        .avatar-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 4px solid #ffffff;
+            background-color: #ffffff;
+        }
+
+        /* ==========================================================================
+           6. SECTION À PROPOS
+           ========================================================================== */
+        .about-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-subtle);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            background-color: var(--bg-page);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           7. SECTION COMPÉTENCES
+           ========================================================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .icon-html { background: #ffe4e6; color: #e11d48; }
+        .icon-css { background: #e0f2fe; color: #0284c7; }
+        .icon-responsive { background: #f3e8ff; color: #9333ea; }
+        .icon-git { background: #ffedd5; color: #ea580c; }
+
+        .skill-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .skill-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           8. SECTION PROJETS
+           ========================================================================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .thumb-1 { background: linear-gradient(135deg, #4f46e5, #9333ea); }
+        .thumb-2 { background: linear-gradient(135deg, #0ea5e9, #10b981); }
+        .thumb-3 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+
+        .project-content {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--bg-page);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+            color: var(--text-muted);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-link {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .project-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
+           9. SECTION CONTACT DIRECT VIA WHATSAPP (SANS EMAIL)
+           ========================================================================== */
+        .contact-hub-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 2rem;
+            box-shadow: var(--shadow-card);
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--whatsapp), var(--primary), var(--secondary));
+        }
+
+        .contact-hub-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-hub-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 540px;
+            margin: 0 auto 2.25rem auto;
+        }
+
+        .contact-action-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .contact-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #065f46;
+            background: #d1fae5;
+            padding: 0.3rem 0.85rem;
+            border-radius: var(--radius-full);
+        }
+
+        .social-channel-block {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-channel-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .social-buttons-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Boutons de badges réseaux */
+        .social-pill-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background-color: var(--bg-page);
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-pill-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .social-pill-link.linkedin:hover {
+            background-color: var(--linkedin);
+            color: #ffffff;
+            border-color: var(--linkedin);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+        }
+
+        .social-pill-link.facebook:hover {
+            background-color: var(--facebook);
+            color: #ffffff;
+            border-color: var(--facebook);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
+
+        /* Liens ronds pour le hero et footer */
+        .social-circle-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+        }
+
+        .social-circle-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .social-circle-link:hover {
+            transform: translateY(-3px);
+            color: #ffffff;
+        }
+
+        .social-circle-link.whatsapp:hover {
+            background-color: var(--whatsapp);
+            border-color: var(--whatsapp);
+            box-shadow: 0 6px 16px var(--whatsapp-glow);
+        }
+
+        .social-circle-link.linkedin:hover {
+            background-color: var(--linkedin);
+            border-color: var(--linkedin);
+            box-shadow: 0 6px 16px rgba(10, 102, 194, 0.3);
+        }
+
+        .social-circle-link.facebook:hover {
+            background-color: var(--facebook);
+            border-color: var(--facebook);
+            box-shadow: 0 6px 16px rgba(24, 119, 242, 0.3);
+        }
+
+        /* ==========================================================================
+           10. PIED DE PAGE
+           ========================================================================== */
+        .footer {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            background-color: #ffffff;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* ==========================================================================
+           11. RESPONSIVE DESIGN (MÉDIA QUERIES)
+           ========================================================================== */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-socials {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-card {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 1.85rem;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-link {
+                font-size: 0.85rem;
+            }
+
+            .avatar-circle,
+            .avatar-glow {
+                width: 210px;
+                height: 210px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .contact-hub-card {
+                padding: 2.5rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <header class="header">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>
+                <span> NIAMA EL YADIRI</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section princesse -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="princesse">
+                    <div class="hero-status">
+                        <span class="status-pulse"></span>
+                        Disponible immédiatement sur WhatsApp
+                    </div>
+                    <h1 class="hero-title">
+                        Bonjour, je suis  Niama EL yadiri,<br>
+                        <span class="highlight-text">Dévloppeuse web</span>
+                    </h1>
+                    <p class="hero-description">
+                        je suis développeuse web en formation et professionnelle en design.j'aspire à devenir meilleure en programmation et développement de sites web.
+                
+
+                        
+                    </p>
+                    <div class="hero">
+                        <!-- Bouton WhatsApp direct dans le Hero -->
+                        <a href="https://wa.me/212763624026?text=Bonjour,%20je%20vous%20contacte%20depuis%20votre%20portfolio." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+                            </svg>
+                            <span>WhatsApp Direct</span>
+                        </a>
+                        <a href="#projects" class="btn btn-outline">Voir mes projets</a>
+                        
+                        <!-- Raccourcis réseaux LinkedIn & Facebook -->
+                        <div class="princesse">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-link facebook" title="Facebook" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emplacement Photo Prêt à l'Emploi -->
+                <div class="hero-avatar-wrapper">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-circle">
+                        <!-- Remplacer simplement le src ci-dessous par votre fichier image (ex: src="photo.jpg") -->
+                        <img 
+                            src="niama.jpe.jpeg" 
+                            alt="Photo de profil" 
+                            class="avatar-photo"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À Propos -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Découverte</span>
+                    <h2 class="section-title">À propos de moi</h2>
+                    <p class="section-subtitle">Mon profil, mes objectifs et ma passion pour la création web.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-text">
+                        <h3>Construire des interfaces simples, nettes et performantes</h3>
+                        <p>
+                            En formation continue sur les technologies du web, je conçois des sites modernes en respectant les standards actuels : code sémantique, design épuré et chargement instantané.
+                        </p>
+                        <p>
+                            Toujours réactif, je privilégie les échanges clairs et directs. N'hésitez pas à m'écrire via WhatsApp pour discuter de vos besoins.
+                        </p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">HTML & CSS pur</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Projets finalisés</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">&lt; 1h</span>
+                            <span class="stat-label">Réponse WhatsApp</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Mobile</span>
+                            <span class="stat-label">100% Adaptatif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Boîte à outils</span>
+                    <h2 class="section-title">Mes Compétences</h2>
+                    <p class="section-subtitle">Les outils et standards que je maîtrise pour vos réalisations.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon icon-html">&lt;/&gt;</div>
+                        <h3 class="skill-name">HTML5 Sémantique</h3>
+                        <p class="skill-desc">Structure claire, hiérarchie de balises exemplaire et conformité d'accessibilité.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-css">#</div>
+                        <h3 class="skill-name">CSS3 Moderne</h3>
+                        <p class="skill-desc">Flexbox, Grid Layout, animations douces et variables globales faciles à maintenir.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-responsive">&#x25A3;</div>
+                        <h3 class="skill-name">Design Responsive</h3>
+                        <p class="skill-desc">Affichage impeccable pensé pour mobiles, tablettes et grands moniteurs.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-git">&amp;</div>
+                        <h3 class="skill-name">Git & Déploiement</h3>
+                        <p class="skill-desc">Versionnement fiable, publication en ligne instantanée et gestion de code rigoureuse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Portfolio</span>
+                    <h2 class="section-title">Mes Réalisations</h2>
+                    <p class="section-subtitle">Des exemples concrets créés en pur HTML & CSS.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image-placeholder thumb-1">
+                            <span>Landing Page Produit</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">Flexbox</span>
+                            </div>
+                            <h3 class="project-title">Page Produit Minimaliste</h3>
+                            <p class="project-description">
+                                Conception d'une page de vente soignée avec grille tarifaire claire, typographie fluide et sans script lourd.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Aperçu &rarr;</a>
+                                <a href="#" class="project-link">Code GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image-placeholder thumb-2">
+                            <span>Blog / Grille d'Articles</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">CSS Grid</span>
+                                <span class="project-tag">Responsive</span>
+                            </div>
+                            <h3 class="project-title">Mise en page Blog Tech</h3>
+                            <p class="project-description">
+                                Interface ergonomique exploitant la puissance de CSS Grid avec colonnes fluides et fiches interactives.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Aperçu &rarr;</a>
+                                <a href="#" class="project-link">Code GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image-placeholder thumb-3">
+                            <span>Tableau de Bord</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">CSS Custom Props</span>
+                                <span class="project-tag">Variables</span>
+                            </div>
+                            <h3 class="project-title">Composant Statistiques</h3>
+                            <p class="project-description">
+                                Module d'analyse de métriques conçu uniquement en pur CSS sans librairie graphique superflue.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Aperçu &rarr;</a>
+                                <a href="#" class="project-link">Code GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact Direct (100% WhatsApp & Réseaux, Sans Email) -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Échangeons</span>
+                    <h2 class="section-title">Me Contacter</h2>
+                    <p class="section-subtitle">Discutons directement de votre projet ou de vos questions sans formulaire complexe ni email.</p>
+                </div>
+
+                <div class="contact-hub-card">
+                    <div class="contact-action-wrapper">
+                        <span class="contact-status-badge">
+                            <span class="status-pulse"></span> En ligne & réactif
+                        </span>
+
+                        <h3 class="contact-hub-title">Contactez-moi sur WhatsApp</h3>
+                        <p class="contact-hub-desc">
+                            Cliquez sur le bouton ci-dessous pour ouvrir une conversation WhatsApp instantanée avec moi.
+                        </p>
+
+                        <!-- Bouton WhatsApp Officiel Direct -->
+                        <a href="https://wa.me/212763624026?text=Bonjour,%20je%20vous%20contacte%20depuis%20votre%20portfolio." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+                            </svg>
+                            <span>Démarrer la discussion WhatsApp</span>
+                        </a>
+
+                        <!-- Réseaux Sociaux LinkedIn & Facebook -->
+                        <div class="social-channel-block">
+                            <span class="social-channel-title">Ou retrouvez-moi sur mes réseaux</span>
+                            <div class="social-buttons-row">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill-link linkedin">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                    <span>LinkedIn</span>
+                                </a>
+
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-link facebook">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/>
+                                    </svg>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 NIAMA EL YADIRI — Conçu en pur HTML5 & CSS3 sans JavaScript.</p>
+            <div class="footer-socials">
+                <!-- Lien WhatsApp Footer -->
+                <a href="https://wa.me/212763624026?text=Bonjour,%20je%20vous%20contacte%20depuis%20votre%20portfolio." target="_blank" rel="noopener noreferrer" class="social-circle-link whatsapp" title="WhatsApp" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+                    </svg>
+                </a>
+                <!-- Lien LinkedIn Footer -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <!-- Lien Facebook Footer -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-link facebook" title="Facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
